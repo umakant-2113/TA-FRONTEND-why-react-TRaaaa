@@ -50,20 +50,31 @@ table {
 /* general css */
 
 .body{
-    background-color: rgb(207, 184, 67);
+    background-color: rgb(243,170,110);
 }
 .div{
     text-align: center;
     margin-top: 5rem;
+    width: 40%;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: blueviolet;
+    border: 2px solid red;
 }
 h2{
     font-size: 1.6rem;
     font-weight: 600;
     margin: .6rem;
+    color: white;
+    font-size: 2rem;
 }
 .input{
     font-size: 1.5rem;
-    width: 30%;
+    width: 70%;
+    border: 2px solid coral;
+    padding: .3rem;
+    text-transform: capitalize;
+
 }
 .data-div{
    
@@ -81,9 +92,36 @@ p{
     font-size: 1.8rem;
     font-weight: 500;
 }
+.movie-list{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+
+    
+}
+li{
+    font-size: 1.6rem;
+    margin: .5rem 0;
+    padding-bottom: .3rem;
+    display: flex;
+    justify-content: space-around;
+    border-bottom:.3px dashed coral ;
+    width: 80%;
+    margin: .5rem auto;
+}
 span{
-    border: 2px solid red;
-    padding: .2rem;
-    font-size: 1.5rem;
     cursor: pointer;
+    text-transform: capitalize;
+    color: rgb(71, 224, 71);
+    font-weight: 600;
+}
+.div1{
+    margin: .3rem 0;
+
+}
+label{
+text-transform: capitalize;
+color: white;
+font-weight: 800;
 }
