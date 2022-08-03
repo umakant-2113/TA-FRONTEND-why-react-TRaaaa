@@ -1,39 +1,43 @@
-let root = document.querySelector('div');
+let root = document.querySelector('.movie-list');
 let input = document.querySelector('input');
 
-let arr = [];
+let allMovies = [];
 
 input.addEventListener('keyup', (event) => {
   if (event.keyCode === 13) {
-    event.preventDefault();
-    let div = document.createElement('div');
-    div.classList.add('data-div');
-    let div2 = document.createElement('div');
-    div2.classList.add('data');
-
-console.log(event.target.value)
-
-    let p = document.createElement('p');
-    p.innerText = event.target.value;
-    
-
-    let span = document.createElement('span');
-
-    span.addEventListener('click', clicked);
-
-    span.innerText = 'To Watch';
-    div2.append(p, span);
-    div.append(div2);
-    root.append(div);
+    if (event.target.value !== '') {
+      allMovies.push({
+        name: event.target.value,
+        watched: false,
+      });
+    }
     event.target.value = '';
+    // console.log(allMovies);
+    createUi(allMovies, root);
   }
 });
 
-function clicked(event) {
-
-if(event.target.innerText=== "To Watch"){
-    event.target.innerText= "Watch"
-}else if(event.target.innerText=== "Watch"){
-event.target.innerText="To Watch"
+function handlechange(event) {
+  let id = event.target.id;
+  allMovies[id].watched = !allMovies[id].watched;
+  createUi(allMovies, root);
 }
+
+function createUi(data, root) {
+  root.innerHTML = '';
+  data.forEach((element, i) => {
+    let li = document.createElement('li');
+    let div = document.createElement('div');
+    div.classList.add('div1');
+    let span = document.createElement('span');
+    span.innerText = element.watched ? 'Watched' : 'To Watched';
+    span.id = i;
+    span.addEventListener('click', handlechange);
+    let label = document.createElement('label');
+    label.for = i;
+    label.innerText = element.name;
+    li.append(label, span);
+    div.append(li);
+    root.append(div);
+  });
 }
