@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body class="body">
+    <section id="root"></section>
+
+    <script type="text/babel">
+      let root = document.querySelector('#root');
+
+      let cardInfo = {
+        title: 'City Lights in New York',
+        date: new Date('2017-01-26'),
+        comments: 67,
+        subTitle: 'The city that never sleeps.',
+        description:
+          'New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.',
+        category: 'photos',
+        imageURL:
+          'https://images.unsplash.com/photo-1610874933184-7728fd666162?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60',
+      };
+
+      console.log ()
+
+      cardInfo.date =String(cardInfo.date).split(' ').splice(1,2).reverse()
+      let data = [];
+      data.push(cardInfo);
+      let allData = [...data];
+
+      function createUI(allData) {
+        let figure = allData.map((elm, i) => {
+          return (
+            <div className='box'>
+              <img className='image' src={elm.imageURL} alt='' />
+              <div className='category'>
+                <p>{elm.category} </p>
+              </div>
+              <div className='cir'>
+                {elm.date[0]} 
+                <br/>
+                {elm.date[1]}
+              </div>
+              <div className="small-box">
+                <h1 className="h1">{elm.title}</h1>
+                <h2 className="h2"> {elm.subTitle}</h2>
+                <p className="p">{elm.description}</p>
+                <div className='div'>
+                  <div className="comment" >
+                    <small className="sm-comment"> 0</small>
+                   6 Min Ago | |       <i class='fa-solid fa-comments'></i>  {' '}
+                    {elm.comments} Comments{' '}
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        });
+
+        ReactDOM.render(figure, root);
+      }
+      createUI(allData);
+    </script>
+  </body>
+</html>
