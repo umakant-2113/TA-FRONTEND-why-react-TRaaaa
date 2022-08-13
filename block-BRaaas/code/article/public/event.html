@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+    <link rel="stylesheet" href="./event.css">
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+let root=document.getElementById("root");
+
+function First (){
+    return <button className="btn" onClick={()=>{
+        alert("this is react event")
+    }} > Click Me</button>
+}
+
+function Second() {
+    return <button className="btn" onClick={()=>{
+        alert("this is react event")
+        alert("this is second react event")
+        alert("this is third  react event")
+    }} > Click Me</button>
+}
+
+function Third() {
+ let name=["Arya","John", "Bran"];
+ return name.map(elm=><button className="btn" onClick={()=>{
+    alert(`hello ${elm}`)
+ }} >{elm}</button>)
+}
+
+function Four(){
+    let fruits = [
+  { id: 'apple', value: '🍎 apple' },
+  { id: 'orange', value: '🍊 orange' },
+  { id: 'grape', value: '🍇 grape' },
+  { id: 'pear', value: '🍐 pear' },
+]
+
+return fruits.map(elm=><button key={elm.id}  className="btn" onClick={()=>{
+    alert( elm.value)
+ }} >{elm.value}</button>)
+
+}
+
+function elm(type, atr={}, child){
+    let value= React.createElement(type)
+    console.log(value,atr,child);
+}
+elm("div",{id: "root"},"hello div elemt " )
+
+
+// ReactDOM.render root);
+ReactDOM.render( 
+[
+<First/>,  <Second/>,<Third/>,<Four/>  
+]
+ , root)
+    </script>
+</body>
+</html>
