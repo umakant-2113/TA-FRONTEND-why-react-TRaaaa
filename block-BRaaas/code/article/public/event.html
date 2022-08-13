@@ -51,10 +51,17 @@ return fruits.map(elm=><button key={elm.id}  className="btn" onClick={()=>{
 
 }
 
+function elm(type, atr={}, child){
+    let value= React.createElement(type)
+    console.log(value,atr,child);
+}
+elm("div",{id: "root"},"hello div elemt " )
 
+
+// ReactDOM.render root);
 ReactDOM.render( 
 [
-<First/>,  <Second/>,<Third/>,<Four/>
+<First/>,  <Second/>,<Third/>,<Four/>  
 ]
  , root)
     </script>
