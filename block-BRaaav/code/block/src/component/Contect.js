@@ -1,6 +1,6 @@
-import img from "../images/assets/media/map.png"
+import img from "../images/assets/media/home-bg.jpg"
 const Contect = ()=>{
-    let user="https://goo.gl/maps/YSoX6uRXxGaVsqt99"
+
     return (
         <>
          <section className="contact padding">
@@ -59,7 +59,7 @@ const Contect = ()=>{
               />
             </form>
             <div className="flex-40 map">
-      <img className="img" src={img} height="300px" width="300px"  border-radius= "50%"/>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28785.93927578482!2d79.54489037932397!3d25.59685995754236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399d4332e2baf109%3A0x220d538a5b4be88d!2sRath%2C%20Uttar%20Pradesh%20210431!5e0!3m2!1sen!2sin!4v1660472074813!5m2!1sen!2sin" width="600" height="450" style={{"border" :0}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
           </div>
         </div>
