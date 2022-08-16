@@ -29,22 +29,27 @@ let root =document.getElementById("root");
 function App(){
     return (
         <div >
-         <Btn type="secondry" size="small" label="click Me"/>
-         <Btn   onClickHandler={() => alert("You Clicked Me!")}/>
-         <Btn disabled="true" size="medium"/>
-         <Btn size="large" type="primary" label="Click Me"  />
-         <Btn type="secondry" size="small"/>
+         <Btn size="large" type="secondry"    onClickHandler={() => alert("You Clicked Me!")} disabled={true}/>
          <Btn />
+         <Btn/>
+         <Btn/>
+         <Btn/>
+         <Btn/>
         </div>
     )
 }
 
 
 function Btn (props){
-    let {size,type,disabled,label, onClickHandler}= props
+    let {size,type,disabled,label, onClickHandler,id}= props
+function getSize(){
+    return `button--${size || 'medium'} button--${type || 'primary'}`
+}
+
+
 return (
   <>
-    <button className={` ${type ? type: "primary" } ${ size ? size : "medium"} `  } onClick={onClickHandler} disabled={disabled} >{ label || "Button"} </button>
+    <button className={getSize()}  onClick={onClickHandler} disabled={disabled} >Click Me </button>
     </>
 )
 }
