@@ -31,10 +31,10 @@ function App(){
         <div >
          <Btn type="secondry" size="small" label="click Me"/>
          <Btn   onClickHandler={() => alert("You Clicked Me!")}/>
-         <Btn disabled="true"/>
+         <Btn disabled="true" size="medium"/>
          <Btn size="large" type="primary" label="Click Me"  />
-         <Btn/>
-         <Btn/>
+         <Btn type="secondry" size="small"/>
+         <Btn />
         </div>
     )
 }
@@ -42,7 +42,6 @@ function App(){
 
 function Btn (props){
     let {size,type,disabled,label, onClickHandler}= props
-    console.log(props)
 return (
   <>
     <button className={` ${type ? type: "primary" } ${ size ? size : "medium"} `  } onClick={onClickHandler} disabled={disabled} >{ label || "Button"} </button>
