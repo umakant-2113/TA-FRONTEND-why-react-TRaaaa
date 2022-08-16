@@ -9,7 +9,9 @@
     flex-direction: row;
 }
 
-.primary{
+/* button type */
+
+.button--primary{
     font-size: 1.4rem;
     padding: .6rem;
     font-weight: 600;
@@ -17,42 +19,43 @@
     background-color: goldenrod;
 
 }
-.medium{
-    background-color: cornflowerblue;
-    font-size: 1.4rem;
-    padding: 1rem;
-    font-weight: 600;
-    margin: 20px;
-    }
-.secondry{
+
+.button--secondry{
     font-size: 1.4rem;
     padding: .7rem;
     font-weight: 600;
     margin: 20px;
     background-color: red;
 }
-
-
-.small{
-    background-color:blueviolet;
-    font-size: 1rem;
-    padding: 1rem;
-    font-weight: 600;
-    margin: 20px;
-}
-
-.tertiarty{
+.button--tertiarty{
     background-color: coral;
     font-size: 1.4rem;
     padding: .8rem;
     font-weight: 600;
     margin: 20px;
 }
-.large{
-font-size: 1.4rem;
-padding: 1.4rem;
-font-weight: 600;
-margin: 20px;
-background-color:yellow;
-}
 
+/* button size */
+
+ 
+    .button--small{
+        background-color:blueviolet;
+        font-size: 1rem;
+        padding: 1rem;
+        font-weight: 600;
+        margin: 20px;
+    }
+    .button--medium{
+        background-color: cornflowerblue;
+        font-size: 1.4rem;
+        padding: 1rem;
+        font-weight: 600;
+        margin: 20px;
+        }
+        .button--large{
+            font-size: 1.4rem;
+            padding: 1.4rem;
+            font-weight: 600;
+            margin: 20px;
+            background-color:yellow;
+            }
