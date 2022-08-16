@@ -1,0 +1,55 @@
+.btn{
+    font-size: 1.4rem;
+    margin: 20px;
+    cursor: pointer;
+}
+.div{
+    display: flex;
+    margin: 10px;
+    flex-direction: row;
+}
+
+.primary{
+    font-size: 1.4rem;
+    padding: .6rem;
+    font-weight: 600;
+    margin: 20px;
+    background-color: goldenrod;
+
+}
+.secondry{
+    font-size: 1.4rem;
+    padding: .7rem;
+    font-weight: 600;
+    margin: 20px;
+    background-color: red;
+}
+.tertiarty{
+    background-color: coral;
+    font-size: 1.4rem;
+    padding: .8rem;
+    font-weight: 600;
+    margin: 20px;
+}
+
+.small{
+    background-color:blueviolet;
+    font-size: 1rem;
+    padding: 1rem;
+    font-weight: 600;
+    margin: 20px;
+}
+.medium{
+background-color: cornflowerblue;
+font-size: 1.4rem;
+padding: 1rem;
+font-weight: 600;
+margin: 20px;
+}
+.large{
+    font-size: 1.4rem;
+padding: 1.4rem;
+font-weight: 600;
+margin: 20px;
+background-color: teal;
+}
